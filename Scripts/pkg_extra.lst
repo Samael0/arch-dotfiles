@@ -23,6 +23,7 @@ neovim                                                 # vim based text editor
 visual-studio-code-bin                                 # MS text editor
 
 # --------------------------------------------------- // Backends
+asdf-vm                                                # tool version manager (python, nodejs, etc...)
 
 # --------------------------------------------------- // Lockscreen
 
