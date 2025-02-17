@@ -30,7 +30,6 @@ waybar                                                 # system bar
 swww                                                   # wallpaper
 hyprlock                                               # lock screen
 wlogout                                                # logout menu
-# grimblast-git                                        # screenshot tool # DEPRECATED! We will ship our own version to avoid breaking changes
 grim                                                   # screenshot tool
 hyprpicker                                             # color picker
 slurp                                                  # region select for screenshot/screenshare
@@ -42,7 +41,6 @@ hyprsunset                                             # blue light filter
 polkit-gnome                                           # authentication agent
 xdg-desktop-portal-hyprland                            # xdg desktop portal for hyprland
 pacman-contrib                                         # for system update check
-python-pyamdgpuinfo                                    # for amd gpu info
 parallel                                               # for parallel processing
 jq                                                     # for json processing
 imagemagick                                            # for image processing
@@ -62,7 +60,7 @@ qt5-wayland                                            # wayland support in qt5
 qt6-wayland                                            # wayland support in qt6
 
 # --------------------------------------------------- // Applications
-firefox                                                # browser
+google-chrome                                          # browser
 kitty                                                  # terminal
 dolphin                                                # kde file manager
 ark                                                    # kde file archiver
@@ -73,13 +71,11 @@ nwg-displays                                           # monitor management util
 
 # --------------------------------------------------- // Shell
 eza|zsh                                                # file lister for zsh
-# oh-my-zsh-git|zsh                                    #  plugin manager for zsh (Optional) // Moved to pkg_extra.lst
 zsh-theme-powerlevel10k-git|zsh                        # theme for zsh
-pokego-bin|zsh                                        # display pokemon sprites in terminal (written GO)
+pokego-bin|zsh                                         # display pokemon sprites in terminal (written GO)
 eza|fish                                               # file lister for fish
 starship|fish                                          # customizable shell prompt
 fastfetch                                              # system information fetch tool
 
 # --------------------------------------------------- // HyDE
-# hyde-cli-git                                           # cli tool to manage hyde \\ Deprecated for HyDE
 hypridle                                               # idle daemon
