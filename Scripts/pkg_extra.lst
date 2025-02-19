@@ -3,9 +3,6 @@ wttrbar                                                # for weather
 python-requests|wttrbar                                # script dependency
 ddcui                                                  # GUI to control brightness for external monitors
 
-# --------------------------------------------------- // Shell
-
-
 # --------------------------------------------------- // Misc
 xdg-desktop-portal-gtk                                 # xdg desktop portal using gtk
 
@@ -13,19 +10,18 @@ xdg-desktop-portal-gtk                                 # xdg desktop portal usin
 cava                                                   # audio visualizer
 
 # --------------------------------------------------- // Apps
-neovim                                                 # vim based text editor
 
 # --------------------------------------------------- // Shell
-# oh-my-zsh-git|zsh                                    # Optional plugin manager for zsh
-# pokemon-colorscripts-git|zsh                         # display pokemon sprites (optional)
+oh-my-zsh-git|zsh                                      # plugin manager for zsh
+pokemon-colorscripts-git|zsh                           # display pokemon sprites
 
 # --------------------------------------------------- // Editor
-visual-studio-code-bin                                 # MS text editor
+
 
 # --------------------------------------------------- // Backends
-asdf-vm                                                # tool version manager (python, nodejs, etc...)
+asdf-vm                                                # manage multiple language runtime versions
 
 # --------------------------------------------------- // Lockscreen
 
 # --------------------------------------------------- // OSD
-swayosd-git                                            # A GTK based on screen display for keyboard shortcuts like caps-lock and volume
+swayosd-git                                             # A GTK based on screen display for keyboard shortcuts like caps-lock and volume
