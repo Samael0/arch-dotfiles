@@ -28,17 +28,23 @@ if pkg_installed grub && [ -f /boot/grub/grub.cfg ]; then
             sudo sed -i "/^GRUB_CMDLINE_LINUX_DEFAULT=/c\GRUB_CMDLINE_LINUX_DEFAULT=\"${gcld} nvidia_drm.modeset=1\"" /etc/default/grub
         fi
 
-        print_log -r "[bootloader] " -b " :: " "Select grub theme:" -r "\n[1]" -b " Retroboot (dark)" -r "\n[2]" -b " Pochita (light)"
+        print_log -r "[bootloader] " -b " :: " "Select grub theme:" -r "\n[1]" -b " Retroboot (dark)" -r "\n[2]" -b " Pochita (light)" -r "\n[3]" -b " Elegant (dark)"
         read -r -p " :: Press enter to skip grub theme <or> Enter option number : " grubopt
         case ${grubopt} in
         1) grubtheme="Retroboot" ;;
         2) grubtheme="Pochita" ;;
+        3) grubtheme="Elegant" ;;
         *) grubtheme="None" ;;
         esac
 
         if [ "${grubtheme}" == "None" ]; then
             print_log -g "[bootloader] " -b "skip :: " "grub theme..."
             sudo sed -i "s/^GRUB_THEME=/#GRUB_THEME=/g" /etc/default/grub
+        else if [ "${grubtheme}" == "Elegant" ]; then
+            print_log -g "[bootloader] " -b "set :: " "grub theme // ${grubtheme}"
+            # shellcheck disable=SC2154
+            sudo tar -xzf "${cloneDir}/Source/arcs/Grub_${grubtheme}.tar.gz" -C /usr/share/grub/themes/
+            sudo /usr/share/grub/themes/Grub_Elegant/install.sh -t forest -p float -s 4k
         else
             print_log -g "[bootloader] " -b "set :: " "grub theme // ${grubtheme}"
             # shellcheck disable=SC2154
