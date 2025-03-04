@@ -39,8 +39,13 @@ pokego --no-title -r 1,3,6
 # manually add your oh-my-zsh plugins here
 plugins=(
     "sudo"
+    "asdf"
+    "ssh-agent"
     # "git"                     # (default)
     # "zsh-autosuggestions"     # (default)
     # "zsh-syntax-highlighting" # (default)
     # "zsh-completions"         # (default)
 )
+
+# Add shims directory to path
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
