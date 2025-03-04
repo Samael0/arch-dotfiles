@@ -21,18 +21,25 @@ if pkg_installed sddm; then
     fi
     if [ ! -f /etc/sddm.conf.d/backup_the_hyde_project.conf ] || [ "${HYDE_INSTALL_SDDM}" = true ]; then
         print_log -g "[DISPLAYMANAGER] " -b " :: " "configuring sddm..."
-        print_log -g "[DISPLAYMANAGER] " -b " :: " "Select sddm theme:" -r "\n[1]" -b " Candy" -r "\n[2]" -b " Corners"
+        print_log -g "[DISPLAYMANAGER] " -b " :: " "Select sddm theme:" -r "\n[1]" -b " Candy" -r "\n[2]" -b " Corners" -r "\n[3]" -b " Astronaut"
         read -p " :: Enter option number : " -r sddmopt
 
         case $sddmopt in
         1) sddmtheme="Candy" ;;
-        *) sddmtheme="Corners" ;;
+        2) sddmtheme="Corners" ;;
+        3) sddmtheme="Astronaut" ;;
+        *) sddmtheme="Astronaut" ;;
         esac
 
-        sudo tar -xzf "${cloneDir}/Source/arcs/Sddm_${sddmtheme}.tar.gz" -C /usr/share/sddm/themes/
-        sudo touch /etc/sddm.conf.d/the_hyde_project.conf
-        sudo cp /etc/sddm.conf.d/the_hyde_project.conf /etc/sddm.conf.d/backup_the_hyde_project.conf
-        sudo cp /usr/share/sddm/themes/${sddmtheme}/the_hyde_project.conf /etc/sddm.conf.d/
+        if [sddmtheme != "Astronaut"]; then
+            sudo tar -xzf "${cloneDir}/Source/arcs/Sddm_${sddmtheme}.tar.gz" -C /usr/share/sddm/themes/
+            sudo touch /etc/sddm.conf.d/the_hyde_project.conf
+            sudo cp /etc/sddm.conf.d/the_hyde_project.conf /etc/sddm.conf.d/backup_the_hyde_project.conf
+            sudo cp /usr/share/sddm/themes/${sddmtheme}/the_hyde_project.conf /etc/sddm.conf.d/
+        fi
+        else
+            sh -c "$(curl -fsSL https://raw.githubusercontent.com/keyitdev/sddm-astronaut-theme/master/setup.sh)"
+        fi
     else
         print_log -y "[DISPLAYMANAGER] " -b " :: " "sddm is already configured..."
     fi
