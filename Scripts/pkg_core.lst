@@ -70,6 +70,7 @@ unzip                                                  # extracting zip files
 neovim                                                 # terminal text editor
 visual-studio-code-bin                                 # ide text editor
 nwg-displays                                           # monitor management utility
+yaak                                                   # API client
 
 # --------------------------------------------------- // Shell
 eza|zsh                                                # file lister for zsh
